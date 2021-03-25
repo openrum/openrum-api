@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 const dotenv = require('dotenv');
 const spdy = require('spdy');
 const fs = require('fs');
@@ -27,6 +28,7 @@ if (SSL) {
     .listen(PORT, (error) => {
       if (error) {
         console.log(error);
+        debug(error);
         return process.exit(1);
       }
       console.log(`Listening on port: ${PORT}.`);
