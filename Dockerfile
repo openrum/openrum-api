@@ -4,7 +4,7 @@ FROM node:12.18
 ENV NPM_CONFIG_LOGLEVEL info
 
 # Create app directory
-WORKDIR /home/node/app
+WORKDIR /home/node/app/api
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
@@ -16,9 +16,4 @@ RUN npm install -g nodemon
 
 COPY . .
 
-ADD . /home/node/app
-
-#EXPOSE 5100
-
-#CMD ["/home/node/app/init.sh"]
-#CMD [ "npm", "start" ]
+ADD . /home/node/app/api
