@@ -33,7 +33,8 @@ exports.getItem = (body) => {
     timestamp: today.getTime(),
     connectionType: (body.effectiveConnectionType ?
       body.effectiveConnectionType : ''),
-    ttl: ttl.getTime()
+    ttl: ttl.getTime(),
+    transferSize: (body.transferSize ? parseInt(body.transferSize, 10) : 0)
   };
 
   return item;
